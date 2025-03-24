@@ -104,7 +104,9 @@
   --color-colors-accents-accent-4-700: #a91944;
   --color-colors-accents-accent-4-800: #870d31;
   --color-colors-accents-accent-4-900: #650421;
+  --color-text-states-valid: #1daa5c;
   --color-surface-primary-1: #f0fff9;
+  --color-strokes-states-valid: #1daa5c;
   --color-colors-functionals-warning-turkoise: #ffffff;
   --color-hotpink-t00: #ffffff;
   --color-hotpink-t100: #ffeef9;
@@ -120,9 +122,8 @@
   --color-text-states-link-hover: var(--color-primary-500);
   --color-text-states-visited: var(--color-primary-800);
   --color-text-states-disabled: var(--color-colors-neutrals-200);
-  --color-text-states-valid: var(--color-colors-functionals-valid-800);
   --color-text-states-invalid: var(--color-colors-functionals-invalid-800);
-  --color-text-headings: var(--color-colors-neutrals-1000);
+  --color-text-headings: var(--color-colors-functionals-valid-600);
   --color-text-body: var(--color-colors-neutrals-800);
   --color-text-buttons-primary: var(--color-colors-neutrals-00);
   --color-text-buttons-secondary: var(--color-primary-default);
@@ -145,7 +146,6 @@
   --color-strokes-medium: var(--color-colors-neutrals-500);
   --color-strokes-dark: var(--color-colors-neutrals-800);
   --color-strokes-primary: var(--color-primary-default);
-  --color-strokes-states-valid: var(--color-colors-functionals-valid-800);
   --color-strokes-buttons-secondary: var(--color-primary-default);
   --color-strokes-states-invalid: var(--color-colors-functionals-invalid-800);
   --color-strokes-buttons-secondary-hover: var(--color-primary-700);
