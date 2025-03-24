@@ -8,6 +8,7 @@
     "./skeleton": "./src/atoms/skeleton.tsx",
     "./faqs": "./src/blocks/faqs.tsx",
     "./fonts": "./src/fonts/index.ts",
+    "./color-cards": "./src/blocks/colorCards.tsx",
     "./hero": "./src/blocks/hero.tsx",
     "./rich-text": "./src/blocks/rich-text.tsx",
     "./media-block": "./src/blocks/media.tsx",

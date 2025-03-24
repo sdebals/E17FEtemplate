@@ -1,5 +1,5 @@
 import type { Config } from 'tailwindcss';
-import preset from '@repo/ui/tailwind.config';
+//import preset from '@repo/ui/tailwind.config';
 
 const config: Pick<Config, 'presets' | 'content' | 'theme'> = {
   content: [
@@ -9,7 +9,7 @@ const config: Pick<Config, 'presets' | 'content' | 'theme'> = {
     '../../packages/ui/src/**/*.{ts,tsx}',
     '../../packages/site-protection/src/**/*.{ts,tsx}'
   ],
-  presets: [preset]
+  //presets: [preset]
 };
 
 export default config;

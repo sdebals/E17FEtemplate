@@ -1,5 +1,5 @@
 import type { Config } from 'tailwindcss';
-import preset from '@repo/ui/tailwind.config';
+//import preset from '@repo/ui/tailwind.config';
 
 const config: Pick<Config, 'presets' | 'content'> = {
   content: [

@@ -1,6 +1,11 @@
 @import 'tailwindcss';
+@import './../../apps/web/supernovaTokens/base/color.css';
 
-@config './tailwind.config.ts';
+body {
+  background: yellow !important;
+}
+
+/*** @config './tailwind.config.ts';****/
 
 /* Global overrides */
 p > a {
