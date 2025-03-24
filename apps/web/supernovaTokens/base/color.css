@@ -3,7 +3,7 @@
  * To modify the format or content of this file, please contact your design system team. 
  */
 
-:root {
+@theme {
   --color-primary-00: #ffffff;
   --color-colors-primary-primary-1-100: #f0fff9;
   --color-primary-100: #cfffed;

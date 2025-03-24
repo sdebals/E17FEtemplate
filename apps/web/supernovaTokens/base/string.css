@@ -3,7 +3,7 @@
  * To modify the format or content of this file, please contact your design system team. 
  */
 
-:root {
+@theme {
   --string-type: "Desktop";
   --string-font-family-title: "Tomato Grotesk";
   --string-font-family-body: "Eina 01";
