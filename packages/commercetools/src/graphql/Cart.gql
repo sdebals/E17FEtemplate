@@ -1,0 +1,106 @@
+query CartVersionCustomerKey($cartId: String!) {
+  cart(id: $cartId) {
+    version
+    customer {
+      key
+    }
+  }
+}
+
+query CartById($cartId: String!) {
+  cart(id: $cartId) {
+    lineItems {
+      nameAllLocales {
+        value
+      }
+      price {
+        value {
+          centAmount
+        }
+      }
+      quantity
+    }
+  }
+}
+
+mutation SetCustomerEmail($cartId: String!, $cartVersion: Long!, $email: String!) {
+  updateCart(id: $cartId, version: $cartVersion, actions: { setCustomerEmail: { email: $email } }) {
+    id
+    version
+  }
+}
+
+mutation CreateCartAndAddProduct(
+  $customerId: String!
+  $currency: Currency!
+  $locale: Locale!
+  $productSku: String!
+  $quantity: Long!
+) {
+  createCart(
+    draft: {
+      currency: $currency
+      customerId: $customerId
+      locale: $locale
+      lineItems: { sku: $productSku, quantity: $quantity }
+    }
+  ) {
+    id
+    version
+  }
+}
+
+query cartsForCustomer($where: String!, $locale: Locale!) {
+  carts(where: $where) {
+    results {
+      version
+      id
+      lineItems {
+        id
+        name(locale: $locale)
+        quantity
+        variant {
+          sku
+        }
+      }
+    }
+  }
+}
+
+query getCartById($cartId: String!) {
+  cart(id: $cartId) {
+    customerId
+    version
+  }
+}
+
+mutation removeLineItemFromCart($lineItemId: String!, $version: Long!, $id: String!) {
+  updateCart(
+    actions: [{ removeLineItem: { lineItemId: $lineItemId } }]
+    version: $version
+    id: $id
+  ) {
+    version
+  }
+}
+
+mutation addProductToCart($id: String!, $productSku: String!, $version: Long!) {
+  updateCart(actions: [{ addLineItem: { sku: $productSku } }], version: $version, id: $id) {
+    version
+  }
+}
+
+mutation changeQuantityProduct(
+  $lineItemId: String!
+  $version: Long!
+  $cartId: String!
+  $quantity: Long!
+) {
+  updateCart(
+    actions: [{ changeLineItemQuantity: { lineItemId: $lineItemId, quantity: $quantity } }]
+    version: $version
+    id: $cartId
+  ) {
+    version
+  }
+}

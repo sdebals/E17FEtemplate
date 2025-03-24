@@ -1,0 +1,30 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Foundations/Style Guide/Spacings" />
+
+export const TailwindSpacings = () => {
+  return [4, 8, 12, 16, 24, 32].map((size) => (
+    <tr>
+      <td>{size}</td>
+      <td align="center">{size / 10}rem</td>
+      <td align="center">
+        <div className={`pb-${size} w-160 border-2 border-red-300 bg-red-200`}></div>
+      </td>
+    </tr>
+  ));
+};
+
+# Spacings
+
+<table>
+  <thead>
+    <tr>
+      <th>n</th>
+      <th>Value</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <TailwindSpacings />
+  </tbody>
+</table>

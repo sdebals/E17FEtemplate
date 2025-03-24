@@ -1,0 +1,152 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Help/Sentry" />
+
+# Using Sentry
+
+Sentry is the standard tool for performance monitoring:
+
+> With performance monitoring, Sentry tracks application performance, measuring metrics like throughput and latency,
+and displaying the impact of errors across multiple services. Sentry captures distributed traces consisting of transactions
+and spans to measure individual services and operations within those services.
+
+## Features:
+
+Sentry for next.js offers the following features:
+
+- Automatic Error Tracking with source maps for both JavaScript and TypeScript
+- Automatic Tracing for both the client and server
+- Errors and Performance support for Middleware and Edge routes in Vercel's edge runtime.
+- Events enriched with device data
+- Breadcrumbs created for outgoing HTTP request with XHR and Fetch, and console logs
+- Release health for tracking crash-free users and sessions
+
+## Setup in the project
+
+Sentry configurations are placed in `packages/sentry` folder and can be consumed via `@repo/sentry`.
+
+<div className="border border-red-400 bg-red-100 text-base px-4 py-0.5 mb-16">
+**Attention:** By default Sentry is not enabled in the project. The main reason is that not all projects use Sentry,
+and if not using we don't want it to be included in the final bundle.
+Bear in mind that depending on your project, Sentry setup, and requirements, you may need to do some configuration adjustments.
+</div>
+
+Sentry will only work properly having at least the below variables defined:
+
+```sh
+SENTRY_ENABLED="true"
+SENTRY_ORG="your-org-name"
+SENTRY_PROJECT="your-project-name"
+```
+
+It also needs to be loaded from `packages/sentry/src/sentry.next.config.cjs` into `next.config.mjs`,
+
+```js
+const config = {
+  // For all available options, see:
+  // https://github.com/getsentry/sentry-webpack-plugin#options
+  org: process.env.SENTRY_ORG,
+  project: process.env.SENTRY_PROJECT,
+  // remaining settings
+}
+```
+
+It's also mandatory to have 3 configuration files in the root folder:
+
+```sh
+├── apps
+│   ├── web
+│   │   ├── sentry.client.config.ts
+│   │   ├── sentry.edge.config.ts
+│   │   ├── sentry.server.config.ts
+```
+
+they are empty (to avoid Sentry module being bundled in client if not enabled)
+and if Sentry is used it's necessary to copy the contents from the counterparts in the sentry package:
+
+```sh
+├── packages
+│   ├── sentry
+│   │   ├── src
+│   │   │   ├── sentry.client.config.ts
+│   │   │   ├── sentry.edge.config.ts
+│   │   │   ├── sentry.server.config.ts
+```
+
+
+Sentry configurations are loaded via `.env` variables:
+
+```sh
+# If not present Sentry will not be loaded
+NEXT_PUBLIC_SENTRY_DSN="your-sentry-dsn-url"
+# By default is false
+NEXT_PUBLIC_SENTRY_DEBUG="true"
+# Optional and automatically loaded by Sentry (not applicable on the browser)
+SENTRY_ENVIRONMENT="dev"
+# For the SDK to be able to upload source maps to Sentry, you need to provide an auth token
+SENTRY_AUTH_TOKEN="your-auth-token"
+```
+
+And finally is also necessary to uncomment the contents of `instrumentation.ts` file to be like:
+
+```js
+export async function register() {
+  if (process.env.NEXT_RUNTIME === 'nodejs') {
+    await import('./sentry.server.config');
+  }
+
+  if (process.env.NEXT_RUNTIME === 'edge') {
+    await import('./sentry.edge.config');
+  }
+}
+```
+
+## Usage
+
+### Global Errors
+
+Next.js global errors are caught using the `global-error.tsx` in the app root:
+
+```js
+export default function GlobalError({ error }: { error: Error & { digest?: string } }) {
+  useEffect(() => {
+    Sentry?.captureException(error);
+  }, [error]);
+
+  return (
+    <html lang="en">
+      ...
+    </html>
+  );
+}
+```
+
+### Testing if it's working
+
+Sentry can be used to track errors on demand (but it's not recommended to use it as a logging mechanism).
+
+Inside a component:
+
+```js
+<button
+  type="button"
+  onClick={() => {
+    throw new Error("Sentry Frontend Error");
+  }}
+>
+  Throw error
+</button>
+```
+
+Inside an API route:
+
+```js
+export async function GET(request: Request) {
+  throw new Error("API throw error test");
+  return Response.json({}, { status: 500 });
+}
+```
+
+## References
+
+- [https://docs.sentry.io/platforms/javascript/guides/nextjs/](https://docs.sentry.io/platforms/javascript/guides/nextjs/)

@@ -1,0 +1,127 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "ui": "stream",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": [".next/**", "!.next/cache/**", "dist/**", "storybook-static/**"],
+      "env": [
+        "STORYBLOK_ACCESS_TOKEN",
+        "STORYBLOK_DRAFT_SECRET",
+        "STORYBLOK_REVALIDATE_SECRET",
+        "STORYBLOK_SPACE_ID",
+        "SENTRY_ENABLED",
+        "SENTRY_ENVIRONMENT",
+        "NEXT_PUBLIC_SENTRY_DEBUG",
+        "SENTRY_AUTH_TOKEN",
+        "SENTRY_ORG",
+        "SENTRY_PROJECT",
+        "NEXT_PUBLIC_SENTRY_DSN",
+        "NEXT_PUBLIC_SITE_URL",
+        "NEXT_PUBLIC_APP_ENV",
+        "SITE_PROTECTION_SECRET",
+        "REDIS_HOST",
+        "REDIS_PORT",
+        "REDIS_PASSWORD",
+        "NEXTAUTH_SECRET",
+        "ALGOLIA_APP_ID",
+        "ALGOLIA_SEARCH_API_KEY",
+        "ALGOLIA_SEARCH_INDEX",
+        "COMMERCETOOLS_API_URL",
+        "COMMERCETOOLS_AUTH_URL",
+        "COMMERCETOOLS_CLIENT_ID",
+        "COMMERCETOOLS_CLIENT_SECRET",
+        "COMMERCETOOLS_PROJECT_KEY",
+        "COMMERCETOOLS_SCOPES",
+        "NEXT_RUNTIME",
+        "ANALYZE"
+      ]
+    },
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true,
+      "env": [
+        "STORYBLOK_ACCESS_TOKEN",
+        "STORYBLOK_DRAFT_SECRET",
+        "STORYBLOK_REVALIDATE_SECRET",
+        "STORYBLOK_SPACE_ID",
+        "SENTRY_ENABLED",
+        "SENTRY_ENVIRONMENT",
+        "NEXT_PUBLIC_SENTRY_DEBUG",
+        "SENTRY_AUTH_TOKEN",
+        "SENTRY_ORG",
+        "SENTRY_PROJECT",
+        "NEXT_PUBLIC_SENTRY_DSN",
+        "NEXT_PUBLIC_SITE_URL",
+        "NEXT_PUBLIC_APP_ENV",
+        "SITE_PROTECTION_SECRET",
+        "REDIS_HOST",
+        "REDIS_PORT",
+        "REDIS_PASSWORD",
+        "NEXTAUTH_SECRET",
+        "ALGOLIA_APP_ID",
+        "ALGOLIA_SEARCH_API_KEY",
+        "ALGOLIA_SEARCH_INDEX",
+        "COMMERCETOOLS_API_URL",
+        "COMMERCETOOLS_AUTH_URL",
+        "COMMERCETOOLS_CLIENT_ID",
+        "COMMERCETOOLS_CLIENT_SECRET",
+        "COMMERCETOOLS_PROJECT_KEY",
+        "COMMERCETOOLS_SCOPES",
+        "NEXT_RUNTIME",
+        "ANALYZE"
+      ]
+    },
+    "start": {
+      "cache": false,
+      "persistent": true,
+      "env": [
+        "STORYBLOK_ACCESS_TOKEN",
+        "STORYBLOK_DRAFT_SECRET",
+        "STORYBLOK_REVALIDATE_SECRET",
+        "STORYBLOK_SPACE_ID",
+        "SENTRY_ENABLED",
+        "SENTRY_ENVIRONMENT",
+        "NEXT_PUBLIC_SENTRY_DEBUG",
+        "SENTRY_AUTH_TOKEN",
+        "SENTRY_ORG",
+        "SENTRY_PROJECT",
+        "NEXT_PUBLIC_SENTRY_DSN",
+        "NEXT_PUBLIC_SITE_URL",
+        "SITE_PROTECTION_SECRET",
+        "REDIS_HOST",
+        "REDIS_PORT",
+        "NEXTAUTH_SECRET",
+        "COMMERCETOOLS_API_URL",
+        "COMMERCETOOLS_AUTH_URL",
+        "COMMERCETOOLS_CLIENT_ID",
+        "COMMERCETOOLS_CLIENT_SECRET",
+        "COMMERCETOOLS_PROJECT_KEY",
+        "COMMERCETOOLS_SCOPES",
+        "NEXT_RUNTIME",
+        "ANALYZE"
+      ]
+    },
+    "pull-components": {
+      "cache": false,
+      "persistent": true
+    },
+    "generate-types": {
+      "cache": false,
+      "persistent": true
+    },
+    "generate:component": {
+      "cache": false,
+      "persistent": true
+    },
+    "generate:route-handler": {
+      "cache": false,
+      "persistent": true
+    }
+  },
+  "globalEnv": ["NODE_ENV"]
+}

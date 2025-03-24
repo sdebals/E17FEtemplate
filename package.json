@@ -1,0 +1,34 @@
+{
+  "name": "sb-starter-nextjs",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "web": "turbo dev --filter=web",
+    "start": "turbo start --filter=web",
+    "build:web": "turbo build --filter=web",
+    "build:storybook": "turbo build --filter=storybook",
+    "storybook": "turbo dev --filter=storybook",
+    "sb:pull-components": "turbo pull-components --filter=@repo/storyblok",
+    "sb:generate-types": "turbo generate-types --filter=@repo/storyblok",
+    "ui:generate:component": "turbo generate:component --filter=@repo/ui",
+    "ct:generate-types": "turbo generate-types --filter=@repo/commercetools",
+    "nextjs:generate:route-handler": "turbo generate:route-handler --filter=@repo/nextjs",
+    "lint": "turbo lint",
+    "format": "prettier --write --ignore-unknown .",
+    "format:check": "prettier --check --ignore-unknown ."
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "turbo": "^2.4.4",
+    "typescript": "^5.8.2"
+  },
+  "packageManager": "pnpm@10.6.2",
+  "engines": {
+    "node": ">=18"
+  },
+  "volta": {
+    "node": "20.16.0"
+  }
+}

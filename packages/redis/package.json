@@ -1,0 +1,25 @@
+{
+  "name": "@repo/redis",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    "./next-config": "./src/next-config.mjs",
+    "./cache-handler": "./src/cache-handler.mjs",
+    "./client": "./src/client.ts"
+  },
+  "scripts": {
+    "lint": "eslint . --max-warnings 0"
+  },
+  "devDependencies": {
+    "@neshca/cache-handler": "^1.9.0",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "^22.13.10",
+    "cross-var": "^1.1.0",
+    "dotenv": "^16.4.7",
+    "dotenv-cli": "^8.0.0",
+    "eslint": "^9.22.0",
+    "redis": "^4.7.0",
+    "typescript": "^5.8.2"
+  }
+}

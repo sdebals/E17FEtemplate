@@ -1,0 +1,61 @@
+{
+  "name": "@repo/ui",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    "./split-logos": "./src/blocks/split-logos.tsx",
+    "./product-card": "./src/blocks/product-card.tsx",
+    "./skeleton": "./src/atoms/skeleton.tsx",
+    "./faqs": "./src/blocks/faqs.tsx",
+    "./fonts": "./src/fonts/index.ts",
+    "./hero": "./src/blocks/hero.tsx",
+    "./rich-text": "./src/blocks/rich-text.tsx",
+    "./media-block": "./src/blocks/media.tsx",
+    "./ui-image": "./src/atoms/ui-image.tsx",
+    "./icons": "./src/atoms/icons.tsx",
+    "./header": "./src/layout/header/index.ts",
+    "./footer": "./src/layout/footer/footer.tsx",
+    "./account-action-button": "./src/atoms/account-action-button.tsx",
+    "./search-action-button": "./src/atoms/search-action-button.tsx",
+    "./cart-add-button": "./src/atoms/cart-add-button.tsx",
+    "./cart-header-button": "./src/atoms/cart-header-button.tsx",
+    "./language-action-button": "./src/atoms/language-action-button.tsx",
+    "./cart": "./src/blocks/cart.tsx",
+    "./block-404": "./src/layout/errors/block-404.tsx",
+    "./search-field": "./src/atoms/search-field.tsx",
+    "./types": "./src/types.ts",
+    "./styles.css": "./styles.css",
+    "./tailwind.config": "./tailwind.config.ts"
+  },
+  "scripts": {
+    "generate:component": "TURBO_TELEMETRY_DISABLED=1 turbo gen react-component",
+    "lint": "eslint src/",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@headlessui/react": "^2.2.0",
+    "@heroicons/react": "^2.2.0",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/storyblok": "workspace:*",
+    "@repo/tailwind-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@tailwindcss/postcss": "^4.0.12",
+    "@turbo/gen": "^2.4.4",
+    "@types/eslint": "^9.6.1",
+    "@types/node": "^22.13.10",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "autoprefixer": "^10.4.21",
+    "clsx": "^2.1.1",
+    "eslint": "^9.22.0",
+    "inquirer": "^12.4.3",
+    "inquirer-autocomplete-prompt": "^3.0.1",
+    "next": "^15.2.1",
+    "tailwind-variants": "^1.0.0",
+    "tailwindcss": "^4.0.12",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "sonner": "^2.0.1"
+  }
+}

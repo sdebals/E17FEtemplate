@@ -1,0 +1,28 @@
+{
+  "name": "@repo/sentry",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    "./next-config": "./src/sentry.next.config.cjs"
+  },
+  "scripts": {
+    "lint": "eslint . --max-warnings 0"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@sentry/nextjs": "^9.5.0",
+    "@sentry/types": "^9.5.0",
+    "@storyblok/react": "^3.0.15",
+    "@types/node": "^22.13.10",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "cross-var": "^1.1.0",
+    "dotenv": "^16.4.7",
+    "dotenv-cli": "^8.0.0",
+    "eslint": "^9.22.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "^5.8.2"
+  }
+}

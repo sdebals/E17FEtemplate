@@ -1,0 +1,55 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Intro" />
+
+<div className="container">
+  <div className='sb-section-title'>
+    # Storyblok Next.js Storybook
+
+    This is an experimental project for better understanding a potential optimized setup for next.js with storyblok in a monorepo context.
+
+  </div>
+  <div className="sb-section">
+    <div className="sb-section-item">
+      ## Installation
+      * Clone this repo
+      * Create `.env` files inside each app: `apps/storybook` and `apps/web` based on `.env.example`
+      * Create Storyblok project and obtain the necessary valyes for `apps/web/.env`
+      * Generate Storyblok types by running `pnpm run sb:pull-components` and `pnpm run sb:generate-types`
+      * Start Storybook by running `pnpm run storybook`
+      * Start Next.js by running `pnpm run dev`
+    </div>
+    <div className="sb-section-item">
+      ## Folder structure
+      <p className="sb-section-item-paragraph">
+        Like any other turborepo project, there is an `apps` and `packages folder`.
+        The `apps` folder contains the `Storybook` app and the `Next.js` app
+        The packages folder contains various internal modules that are consumed from each app:
+      </p>
+      <div>
+      * `config-eslint` - base eslint configuration, consumed by other packages and apps
+      * `config-tailwind` - base tailwindcss configuration, consumed by the ui package, Storybook and Next.js apps
+      * `config-typescript` - base typescript configuration, consumed by other packages and apps
+      </div>
+
+    </div>
+    <div className="sb-section-item">
+      <div>
+        <h4 className="sb-section-item-heading">Load assets and resources</h4>
+        <p className="sb-section-item-paragraph">To link static files (like fonts) to your projects and stories, use the
+        `staticDirs` configuration option to specify folders to load when
+        starting Storybook.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div className="sb-container">
+  <div className='sb-section-title'>
+    # Do more with Storybook
+
+    Now that you know the basics, let's explore other parts of Storybook that will improve your experience. This list is just to get you started. You can customise Storybook in many ways to fit your needs.
+
+  </div>
+</div>

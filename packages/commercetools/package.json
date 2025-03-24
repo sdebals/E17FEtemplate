@@ -1,0 +1,39 @@
+{
+  "name": "@repo/commercetools",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    "./client": "./src/client.ts",
+    "./error": "./src/ct-error.ts",
+    "./query": "./src/ct-query.ts",
+    "./fetch-ct-data": "./src/fetch-ct-data.ts",
+    "./mutate-ct-data": "./src/mutate-ct-data.ts",
+    "./mutatation-types": "./src/mutation-types.ts",
+    "./query-types": "./src/query-types.ts",
+    "./gql-types": "./src/graphql/gql-types.ts",
+    "./env": "./src/env.ts"
+  },
+  "scripts": {
+    "generate-types": "graphql-codegen"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.5",
+    "@graphql-codegen/gql-tag-operations-preset": "^2.1.0",
+    "@graphql-codegen/typescript": "^4.1.5",
+    "@graphql-codegen/typescript-document-nodes": "^4.0.15",
+    "@graphql-codegen/typescript-generic-sdk": "^4.0.1",
+    "@graphql-codegen/typescript-operations": "^4.5.1",
+    "@repo/typescript-config": "workspace:*",
+    "base-64": "^1.0.0",
+    "dotenv": "^16.4.7",
+    "graphql": "^16.10.0",
+    "graphql-tag": "^2.12.6",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "@commercetools/platform-sdk": "^8.5.0",
+    "@commercetools/sdk-client-v2": "^3.0.0",
+    "@t3-oss/env-core": "^0.12.0",
+    "zod": "^3.24.2"
+  }
+}

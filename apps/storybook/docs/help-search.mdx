@@ -1,0 +1,35 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Help/Search" />
+
+# Using the Search package (with Algolia)
+
+Algolia is a search-as-a-service platform that provides a search API for websites and mobile applications.
+
+## Setup in the project
+
+The search package is exposed using the internal `@repo/search` package that sits inside `packages/search`.
+This is pretty barebones and only contains the logic to query the Algolia search index.
+
+Next.js will need the following environment variables to be filled in:
+
+```sh
+ALGOLIA_APP_ID="your-app-id"
+ALGOLIA_SEARCH_API_KEY="your-api-key"
+ALGOLIA_SEARCH_INDEX="your-index-name"
+```
+
+## Features
+
+- The search package exposes a `search()` function that can be imported from the repo.
+- The `search()` function can be used to query the Algolia search index. Example:
+
+```ts
+import { search } from '@repo/search/search';
+
+const searchResult = await search<{ title: string }>(query);
+
+return searchResult;
+```
+
+- The web app contains an example page under /search that demonstrates how to use the search package. This also contains debouncing logic to prevent excessive API calls and uses Server Functions to call the Algolia API.

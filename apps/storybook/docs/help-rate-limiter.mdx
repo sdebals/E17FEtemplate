@@ -1,0 +1,134 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Help/RateLimiter" />
+
+# Using a Rate Limiter
+
+The Rate Limiter package exposes a function that can be used to rate limit requests (e.g. API routes, next.js middleware, server actions).
+Typically when applying a rate limit we use the client ip address (usually from the `x-forwarded-for` header, or in some cases from `x-real-ip`),
+the ip address can be combined with an identifier, so we can have different reate limits per api route.
+
+<div className="border border-red-400 bg-red-100 text-base px-4 py-0.5 mb-16">
+**Attention:** This is not a bullet proof solution, if possible, rate limiting should be applied in the WAF layer (e.g. Azure Frontdoor).
+</div>
+
+It's included in two flavours, Redis (using the client from @repo/redis) or Memory (using LRU Cache).
+
+## Usage
+
+### Redis
+
+<div className="border border-red-400 bg-red-100 text-base px-4 py-0.5 mb-16">
+**Attention:** This solution will not work for edge runtime (e.g. vercel edge, cloudflare workers, aws lambda, etc..).
+For that it's required a solution like [@upstash/ratelimit](https://github.com/upstash/ratelimit-js)
+</div>
+
+
+**Example implementation:**
+
+```typescript
+// Example for Redis rate limiter, adapt to your needs
+
+import { headers } from 'next/headers';
+
+import { rateLimiter } from '@repo/rate-limiter/redis';
+
+const limiter = rateLimiter({
+  limit: 10,
+  time: 10
+});
+
+export async function GET(_request: Request) {
+  const headersList = headers();
+
+  const ip = (headersList.get('x-forwarded-for') ?? '127.0.0.1').split(',')[0] as string;
+
+  try {
+    await limiter.check(`my-api-x-${ip}`);
+  } catch {
+    return new Response('Too many requests', { status: 429 });
+  }
+
+  return new Response('OK');
+}
+```
+
+Check the example API Route in `apps/web/app/api/rate-limited/redis/route.ts`
+
+Access `https://localhost:3000/api/rate-limited/redis` and refresh the page 10 times in less than 10 seconds, and you should see a 429 response.
+
+### Memory
+
+**Example implementation:**
+
+```typescript
+// Example for Memory cache rate limiter, adapt to your needs
+
+import { headers } from 'next/headers';
+
+import { rateLimiter } from '@repo/rate-limiter/memory';
+
+const limiter = rateLimiter({
+  time: 10
+});
+
+export async function GET(_request: Request) {
+  const headersList = headers();
+
+  const ip = (headersList.get('x-forwarded-for') ?? '127.0.0.1').split(',')[0] as string;
+
+  try {
+    await limiter.check(10, `my-api-x-${ip}`);
+  } catch {
+    return new Response('Too many requests', { status: 429 });
+  }
+
+  return new Response('OK');
+}
+```
+
+Check the example API Route in `apps/web/app/api/rate-limited/memory/route.ts`
+
+Access `https://localhost:3000/api/rate-limited/memory` and refresh the page 10 times in less than 10 seconds, and you should see a 429 response.
+
+
+#### Inside next.js middleware
+
+For a more aggressive approach, the rate limiter can be used in the next.js middleware, however, this is a measure that requires a good
+understanding of the amount of expected requests, and therefore requires some care when implemented.
+
+**Example implementation:**
+
+```typescript
+// Example for Memory cache rate limiter in the middlware, adapt to your needs
+
+import { headers } from 'next/headers';
+
+import { rateLimiter } from '@repo/rate-limiter/memory';
+
+const limiter = rateLimiter({
+  time: 60
+});
+
+export default async function middleware(request: NextRequest) {
+  const headersList = headers();
+
+  const ip = (headersList.get('x-forwarded-for') ?? '127.0.0.1').split(',')[0] as string;
+
+  try {
+    await limiter.check(100, ip);
+  } catch {
+    return new Response('Too many requests', { status: 429 });
+  }
+
+  // Remaining middleware logic can continue
+}
+
+export const config = {
+  // Exclude everything that may not be a valid path.
+  // Depending on your needs in the middleware you may need to adjust this and the middleware itself.
+  matcher: [
+    '/((?!api|_next|_vercel|_ipx|.netlify|favicon|manifest|locales|images|sitemap|robots.txt|sw.js|workbox|icons|fonts|instrumentation|.*\\..*).*)'
+  ]
+};
+```

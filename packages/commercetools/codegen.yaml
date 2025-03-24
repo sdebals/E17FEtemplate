@@ -1,0 +1,14 @@
+schema:
+  - commercetools-schema:
+      loader: './src/graphql/commercetools-schema-fetcher.js'
+documents: './src/graphql/**/*.{graphql,gql}'
+generates:
+  ./src/graphql/gql-types.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-document-nodes
+    config:
+      skipTypename: true
+      mergeFragmentTypes: true
+      dedupeFragments: true

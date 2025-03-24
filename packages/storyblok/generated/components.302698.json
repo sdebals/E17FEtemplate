@@ -1,0 +1,1113 @@
+{
+  "components": [
+    {
+      "name": "article",
+      "display_name": null,
+      "created_at": "2024-09-02T09:21:26.359Z",
+      "updated_at": "2024-09-02T09:38:11.940Z",
+      "id": 6239846,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "translatable": true,
+          "required": true
+        },
+        "body": {
+          "type": "richtext",
+          "pos": 1,
+          "restrict_type": "",
+          "restrict_components": false,
+          "translatable": true,
+          "customize_toolbar": true,
+          "toolbar": [
+            "ai-shorten",
+            "ai-extend",
+            "ai-rephrase",
+            "ai-summarize",
+            "ai-simplify",
+            "ai-tone",
+            "ai-emoji",
+            "ai-translate",
+            "ai-tldr",
+            "ai-spelling",
+            "blok",
+            "bold",
+            "list",
+            "inlinecode",
+            "code",
+            "emoji",
+            "h3",
+            "h4",
+            "h5",
+            "h6",
+            "h2",
+            "image",
+            "hrule",
+            "italic",
+            "link",
+            "anchor",
+            "olist",
+            "redo",
+            "strike",
+            "subscript",
+            "superscript",
+            "underline",
+            "undo",
+            "paragraph"
+          ],
+          "allow_custom_attributes": false,
+          "allow_target_blank": true
+        },
+        "footer": {
+          "type": "options",
+          "pos": 2,
+          "is_reference_type": true,
+          "source": "internal_stories",
+          "entry_appearance": "card",
+          "allow_advanced_search": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "article",
+      "component_group_uuid": "efb9bc31-ea57-49be-a584-2b79350cc7f2",
+      "color": "#395ece",
+      "icon": "block-doc",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "📑 Page Templates"
+    },
+    {
+      "name": "faq",
+      "display_name": "FAQ",
+      "created_at": "2024-09-02T08:28:57.372Z",
+      "updated_at": "2024-09-03T08:27:00.193Z",
+      "id": 6239639,
+      "schema": {
+        "question": {
+          "type": "text",
+          "pos": 1,
+          "translatable": true,
+          "required": true
+        },
+        "answer": {
+          "type": "richtext",
+          "pos": 2,
+          "required": true,
+          "translatable": true,
+          "customize_toolbar": true,
+          "toolbar": [
+            "ai-complete",
+            "ai-shorten",
+            "ai-extend",
+            "ai-rephrase",
+            "ai-summarize",
+            "ai-simplify",
+            "ai-tone",
+            "ai-emoji",
+            "ai-translate",
+            "ai-tldr",
+            "ai-spelling",
+            "bold",
+            "list",
+            "inlinecode",
+            "code",
+            "emoji",
+            "image",
+            "italic",
+            "link",
+            "anchor",
+            "olist",
+            "strike",
+            "subscript",
+            "superscript",
+            "underline"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "FAQ",
+      "component_group_uuid": "66b1761f-95b7-4c9a-a795-f821df54828c",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "⚛️ Content Items"
+    },
+    {
+      "name": "faqs",
+      "display_name": null,
+      "created_at": "2024-09-02T10:45:06.727Z",
+      "updated_at": "2024-09-03T08:23:14.982Z",
+      "id": 6240442,
+      "schema": {
+        "internalName": {
+          "type": "text",
+          "pos": 0,
+          "required": true
+        },
+        "title": {
+          "type": "text",
+          "pos": 1,
+          "required": true,
+          "translatable": true
+        },
+        "intro": {
+          "type": "richtext",
+          "pos": 2,
+          "translatable": true,
+          "customize_toolbar": true,
+          "toolbar": [
+            "ai-complete",
+            "ai-shorten",
+            "ai-extend",
+            "ai-rephrase",
+            "ai-summarize",
+            "ai-simplify",
+            "ai-tone",
+            "ai-emoji",
+            "ai-translate",
+            "ai-tldr",
+            "ai-spelling",
+            "bold",
+            "color",
+            "emoji",
+            "italic",
+            "link",
+            "strike",
+            "subscript",
+            "superscript",
+            "underline",
+            "redo",
+            "undo"
+          ],
+          "allow_target_blank": true,
+          "allow_custom_attributes": true
+        },
+        "faqItems": {
+          "type": "options",
+          "pos": 3,
+          "is_reference_type": true,
+          "source": "internal_stories",
+          "entry_appearance": "link",
+          "allow_advanced_search": true,
+          "filter_content_type": [
+            "faq"
+          ],
+          "folder_slug": "faqs/",
+          "max_options": "20"
+        },
+        "backgroundColor": {
+          "type": "option",
+          "pos": 4,
+          "use_uuid": true,
+          "source": "internal",
+          "datasource_slug": "design-tokens-color"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": "<div class=\"text-medium text-dark-blue\">{{ it.internalName }}</div>\n<div class=\"text-gray\">{{ it.title }}</div>",
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "faqs",
+      "component_group_uuid": "640ba274-f18b-49cf-a57d-709e2dcccfb4",
+      "color": "#ffac00",
+      "icon": "block-text-img-c",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "🧱 Page Blocks"
+    },
+    {
+      "name": "feature",
+      "display_name": null,
+      "created_at": "2024-08-30T08:45:34.388Z",
+      "updated_at": "2024-08-30T08:45:34.388Z",
+      "id": 6231731,
+      "schema": {
+        "name": {
+          "type": "text"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "feature",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "grid",
+      "display_name": null,
+      "created_at": "2024-08-30T08:45:34.326Z",
+      "updated_at": "2024-08-30T08:45:34.326Z",
+      "id": 6231730,
+      "schema": {
+        "columns": {
+          "type": "bloks"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "grid",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "hero",
+      "display_name": null,
+      "created_at": "2024-09-02T10:35:53.654Z",
+      "updated_at": "2024-09-06T11:33:10.831Z",
+      "id": 6240427,
+      "schema": {
+        "internalName": {
+          "type": "text",
+          "pos": 0,
+          "required": true
+        },
+        "variant": {
+          "type": "option",
+          "pos": 1,
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "3ffaaf6e-9b4a-47de-a521-738c95684a74",
+              "name": "Primary",
+              "value": "primary"
+            },
+            {
+              "_uid": "c8117701-ca84-4a6c-8c1b-29a84c100620",
+              "value": "secondary",
+              "name": "Secondary"
+            },
+            {
+              "_uid": "9483ce33-40ee-412b-82c2-9c3f7284870c",
+              "value": "background-image",
+              "name": "Background Image"
+            },
+            {
+              "_uid": "438ee1bf-329f-42d5-8776-868b80e40e98",
+              "value": "full-page",
+              "name": "Full Page"
+            }
+          ],
+          "default_value": "primary"
+        },
+        "heading": {
+          "type": "text",
+          "pos": 2,
+          "translatable": true,
+          "required": true
+        },
+        "eyebrow": {
+          "type": "text",
+          "pos": 3,
+          "translatable": true
+        },
+        "text": {
+          "type": "richtext",
+          "pos": 4,
+          "allow_target_blank": true,
+          "customize_toolbar": true,
+          "toolbar": [
+            "ai-complete",
+            "ai-shorten",
+            "ai-extend",
+            "ai-rephrase",
+            "ai-summarize",
+            "ai-simplify",
+            "ai-tone",
+            "ai-emoji",
+            "ai-translate",
+            "bold",
+            "list",
+            "color",
+            "emoji",
+            "italic",
+            "link",
+            "anchor",
+            "olist",
+            "redo",
+            "strike",
+            "subscript",
+            "superscript",
+            "underline",
+            "undo"
+          ],
+          "translatable": true
+        },
+        "image": {
+          "type": "asset",
+          "pos": 5,
+          "filetypes": [
+            "images"
+          ]
+        },
+        "videoUrl": {
+          "type": "text",
+          "pos": 6,
+          "translatable": true
+        },
+        "cta1": {
+          "type": "multilink",
+          "pos": 7,
+          "email_link_type": true,
+          "show_anchor": true,
+          "allow_target_blank": true,
+          "allow_custom_attributes": true,
+          "restrict_content_types": true,
+          "component_whitelist": [
+            "article",
+            "page"
+          ],
+          "translatable": true
+        },
+        "cta2": {
+          "type": "multilink",
+          "pos": 8,
+          "email_link_type": true,
+          "show_anchor": true,
+          "allow_target_blank": true,
+          "allow_custom_attributes": true,
+          "restrict_content_types": true,
+          "component_whitelist": [
+            "article",
+            "page"
+          ],
+          "translatable": true
+        },
+        "height": {
+          "type": "option",
+          "pos": 9,
+          "use_uuid": true,
+          "source": "internal",
+          "datasource_slug": "design-tokens-height",
+          "exclude_empty_option": true,
+          "default_value": "md"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": "<div class=\"text-medium text-dark-blue\">{{it.heading}}</div>\n<div>{{@image(it.image.filename)/}}</div>\n<div class=\"font-12 text-gray\">\nHeight:\n{{ @if (it.height === \"s\") }}\nSmall\n{{ #elif (it.height === \"m\") }}\nMedium\n{{ #else }}\nLarge\n{{ /if}}\n</div>",
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "hero",
+      "component_group_uuid": "640ba274-f18b-49cf-a57d-709e2dcccfb4",
+      "color": "#ffac00",
+      "icon": "block-text-img-t-l",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "🧱 Page Blocks"
+    },
+    {
+      "name": "media",
+      "display_name": null,
+      "created_at": "2024-09-02T11:15:56.957Z",
+      "updated_at": "2024-09-02T11:36:45.737Z",
+      "id": 6240703,
+      "schema": {
+        "internalName": {
+          "type": "text",
+          "pos": 0,
+          "required": true
+        },
+        "title": {
+          "type": "text",
+          "pos": 1,
+          "translatable": true
+        },
+        "text": {
+          "type": "richtext",
+          "pos": 2,
+          "translatable": true,
+          "customize_toolbar": true,
+          "allow_target_blank": true,
+          "allow_custom_attributes": true,
+          "toolbar": [
+            "ai-complete",
+            "ai-shorten",
+            "ai-extend",
+            "ai-rephrase",
+            "ai-summarize",
+            "ai-simplify",
+            "ai-tone",
+            "ai-emoji",
+            "ai-translate",
+            "ai-tldr",
+            "ai-spelling",
+            "bold",
+            "color",
+            "emoji",
+            "italic",
+            "link",
+            "anchor",
+            "strike",
+            "redo",
+            "subscript",
+            "superscript",
+            "underline",
+            "undo"
+          ]
+        },
+        "image": {
+          "type": "asset",
+          "pos": 3,
+          "filetypes": [
+            "images"
+          ],
+          "translatable": true
+        },
+        "video": {
+          "type": "multilink",
+          "pos": 4,
+          "force_link_scope": false,
+          "restrict_content_types": true,
+          "component_whitelist": [
+            "video"
+          ]
+        },
+        "caption": {
+          "type": "text",
+          "pos": 5,
+          "translatable": true
+        },
+        "width": {
+          "type": "option",
+          "pos": 6,
+          "use_uuid": true,
+          "source": "internal",
+          "datasource_slug": "design-tokens-width",
+          "default_value": "lg"
+        },
+        "height": {
+          "type": "option",
+          "pos": 7,
+          "use_uuid": true,
+          "source": "internal",
+          "datasource_slug": "design-tokens-height",
+          "default_value": "md"
+        },
+        "backgroundColor": {
+          "type": "option",
+          "pos": 8,
+          "use_uuid": true,
+          "source": "internal",
+          "datasource_slug": "design-tokens-color",
+          "default_value": "neutral"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "media",
+      "component_group_uuid": "640ba274-f18b-49cf-a57d-709e2dcccfb4",
+      "color": "#ffac00",
+      "icon": "block-text-img-c",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "🧱 Page Blocks"
+    },
+    {
+      "name": "navigationLink",
+      "display_name": "Navigation Link",
+      "created_at": "2024-09-02T08:56:23.759Z",
+      "updated_at": "2024-09-02T08:58:26.232Z",
+      "id": 6239753,
+      "schema": {
+        "label": {
+          "type": "text",
+          "pos": 0,
+          "required": true,
+          "translatable": true
+        },
+        "link": {
+          "type": "multilink",
+          "pos": 1,
+          "required": true,
+          "tooltip": true,
+          "description": "Select an existing content entry or use an external link by providing the absolute URL.",
+          "email_link_type": true,
+          "show_anchor": true,
+          "allow_target_blank": true,
+          "allow_custom_attributes": true,
+          "restrict_content_types": true,
+          "component_whitelist": [
+            "page"
+          ]
+        },
+        "icon": {
+          "type": "option",
+          "pos": 2,
+          "use_uuid": true,
+          "source": "internal",
+          "datasource_slug": "design-tokens-icon"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Navigation Link",
+      "component_group_uuid": "2beb7555-c08d-4dd4-bb7d-2cb10f473e5f",
+      "color": "#ff6159",
+      "icon": "block-share",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "🌐 Global"
+    },
+    {
+      "name": "page",
+      "display_name": null,
+      "created_at": "2024-08-30T08:45:34.218Z",
+      "updated_at": "2024-09-09T09:42:24.482Z",
+      "id": 6231728,
+      "schema": {
+        "noIndex": {
+          "type": "boolean",
+          "pos": 0,
+          "description": "Set to true if you want to exclude this page from being indexed by crawlers.",
+          "tooltip": true,
+          "inline_label": false
+        },
+        "metatags": {
+          "type": "custom",
+          "pos": 1,
+          "field_type": "seo-metatags",
+          "options": [],
+          "required_fields": "title",
+          "translatable": true
+        },
+        "title": {
+          "type": "text",
+          "pos": 2,
+          "translatable": true,
+          "required": true
+        },
+        "body": {
+          "type": "bloks",
+          "pos": 3,
+          "maximum": 10
+        },
+        "tab-dcaee0d7-2866-45f1-afb4-8a1fe551aaa9": {
+          "display_name": "SEO",
+          "keys": [
+            "metatags",
+            "noIndex"
+          ],
+          "pos": 4,
+          "type": "tab"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "page",
+      "component_group_uuid": "efb9bc31-ea57-49be-a584-2b79350cc7f2",
+      "color": "#395ece",
+      "icon": "block-doc",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "📑 Page Templates"
+    },
+    {
+      "name": "richText",
+      "display_name": null,
+      "created_at": "2024-09-02T11:37:14.733Z",
+      "updated_at": "2024-09-02T11:43:21.505Z",
+      "id": 6240802,
+      "schema": {
+        "internalName": {
+          "type": "text",
+          "pos": 0,
+          "required": true
+        },
+        "text": {
+          "type": "richtext",
+          "pos": 1,
+          "translatable": true,
+          "required": true,
+          "customize_toolbar": true,
+          "toolbar": [
+            "ai-shorten",
+            "ai-extend",
+            "ai-complete",
+            "ai-rephrase",
+            "ai-summarize",
+            "ai-simplify",
+            "ai-tone",
+            "ai-emoji",
+            "ai-translate",
+            "ai-spelling",
+            "ai-tldr",
+            "bold",
+            "blok",
+            "list",
+            "inlinecode",
+            "code",
+            "color",
+            "copy",
+            "emoji",
+            "h2",
+            "h3",
+            "h4",
+            "h5",
+            "h6",
+            "image",
+            "italic",
+            "link",
+            "anchor",
+            "olist",
+            "paragraph",
+            "quote",
+            "strike",
+            "redo",
+            "subscript",
+            "superscript",
+            "underline",
+            "undo"
+          ],
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "video",
+            "media"
+          ],
+          "allow_target_blank": true,
+          "allow_custom_attributes": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "richText",
+      "component_group_uuid": "640ba274-f18b-49cf-a57d-709e2dcccfb4",
+      "color": "#ffac00",
+      "icon": "block-text-img-c",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "🧱 Page Blocks"
+    },
+    {
+      "name": "settings",
+      "display_name": "Site Settings",
+      "created_at": "2024-09-02T08:58:56.365Z",
+      "updated_at": "2024-09-08T14:33:34.792Z",
+      "id": 6239757,
+      "schema": {
+        "siteName": {
+          "type": "text",
+          "pos": 0,
+          "translatable": true,
+          "description": "The site name is used for SEO purposes and should consist of fewer than 2 words.",
+          "tooltip": true
+        },
+        "siteLogo": {
+          "type": "asset",
+          "pos": 1,
+          "required": true,
+          "filetypes": [
+            "images"
+          ]
+        },
+        "header": {
+          "type": "section",
+          "pos": 2,
+          "keys": [
+            "headerLinks",
+            "banner"
+          ]
+        },
+        "banner": {
+          "type": "richtext",
+          "pos": 3,
+          "translatable": true,
+          "max_length": 100,
+          "customize_toolbar": true,
+          "toolbar": [
+            "bold",
+            "italic",
+            "link",
+            "strike",
+            "subscript",
+            "superscript",
+            "underline",
+            "undo",
+            "redo",
+            "unset"
+          ],
+          "allow_target_blank": true,
+          "allow_custom_attributes": true
+        },
+        "headerLinks": {
+          "type": "options",
+          "pos": 4,
+          "is_reference_type": true,
+          "source": "internal_stories",
+          "entry_appearance": "link",
+          "allow_advanced_search": true,
+          "filter_content_type": [
+            "navigationLink"
+          ],
+          "folder_slug": "{0}/navigation-links",
+          "description": "Select the main navigation links to populate the header main menu.",
+          "max_options": "8"
+        },
+        "footer": {
+          "type": "section",
+          "pos": 5,
+          "keys": [
+            "footerLinks",
+            "footerMessage",
+            "footerCopyright",
+            "footerSocialLinks"
+          ]
+        },
+        "footerMessage": {
+          "type": "text",
+          "pos": 6,
+          "translatable": true
+        },
+        "footerCopyright": {
+          "type": "text",
+          "pos": 7,
+          "translatable": true
+        },
+        "footerLinks": {
+          "type": "options",
+          "pos": 8,
+          "description": "Select the main navigation links to populate the footer menu.",
+          "is_reference_type": true,
+          "source": "internal_stories",
+          "entry_appearance": "link",
+          "allow_advanced_search": true,
+          "folder_slug": "{0}/navigation-links",
+          "filter_content_type": [
+            "navigationLink"
+          ],
+          "max_options": "8"
+        },
+        "footerSocialLinks": {
+          "type": "options",
+          "pos": 9,
+          "is_reference_type": true,
+          "source": "internal_stories",
+          "entry_appearance": "link",
+          "allow_advanced_search": true,
+          "folder_slug": "{0}/social-links",
+          "filter_content_type": [
+            "navigationLink"
+          ]
+        },
+        "notFoundTitle": {
+          "type": "text",
+          "pos": 10,
+          "translatable": true
+        },
+        "notFoundEyebrow": {
+          "type": "text",
+          "pos": 11,
+          "translatable": true
+        },
+        "notFoundText": {
+          "type": "richtext",
+          "pos": 12,
+          "customize_toolbar": true,
+          "toolbar": [
+            "ai-complete",
+            "ai-shorten",
+            "ai-extend",
+            "ai-rephrase",
+            "ai-summarize",
+            "ai-simplify",
+            "ai-tone",
+            "ai-emoji",
+            "ai-translate",
+            "ai-tldr",
+            "ai-spelling",
+            "blok",
+            "bold",
+            "list",
+            "emoji",
+            "italic",
+            "image",
+            "link",
+            "olist",
+            "paragraph",
+            "h2",
+            "h3",
+            "h4",
+            "strike",
+            "subscript",
+            "superscript",
+            "underline",
+            "undo",
+            "redo",
+            "quote"
+          ],
+          "allow_target_blank": true,
+          "allow_custom_attributes": true,
+          "translatable": true
+        },
+        "tab-75f9db4f-faff-4bbd-b2f1-936229f1f776": {
+          "display_name": "SEO",
+          "keys": [
+            "metatags"
+          ],
+          "pos": 13,
+          "type": "tab"
+        },
+        "tab-d1553db8-a305-4dc1-aee8-38d7c986b504": {
+          "display_name": "404",
+          "keys": [
+            "notFoundTitle",
+            "notFoundEyebrow",
+            "notFoundText",
+            "cta1",
+            "cta2"
+          ],
+          "pos": 14,
+          "type": "tab"
+        },
+        "cta1": {
+          "type": "multilink",
+          "pos": 15,
+          "translatable": true,
+          "restrict_content_types": true,
+          "component_whitelist": [
+            "page"
+          ],
+          "allow_custom_attributes": true
+        },
+        "cta2": {
+          "type": "multilink",
+          "pos": 16,
+          "restrict_content_types": true,
+          "component_whitelist": [
+            "page"
+          ],
+          "allow_custom_attributes": true
+        },
+        "metatags": {
+          "type": "custom",
+          "pos": 17,
+          "translatable": true,
+          "field_type": "seo-metatags",
+          "options": [],
+          "required_fields": "title,description,og_image",
+          "description": "Set the global site SEO metatags.\nThe OG and Twitter card titles and descriptions are unnecessary as they will use the global title and description.",
+          "tooltip": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Site Settings",
+      "component_group_uuid": "2beb7555-c08d-4dd4-bb7d-2cb10f473e5f",
+      "color": "#ff6159",
+      "icon": "block-wallet",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "🌐 Global"
+    },
+    {
+      "name": "splitLogos",
+      "display_name": null,
+      "created_at": "2024-09-02T11:44:09.147Z",
+      "updated_at": "2024-09-02T11:46:14.061Z",
+      "id": 6240812,
+      "schema": {
+        "internalName": {
+          "type": "text",
+          "pos": 0,
+          "required": true
+        },
+        "title": {
+          "type": "text",
+          "pos": 1,
+          "translatable": true
+        },
+        "text": {
+          "type": "richtext",
+          "pos": 2,
+          "translatable": true,
+          "customize_toolbar": true,
+          "toolbar": [
+            "ai-complete",
+            "ai-shorten",
+            "ai-extend",
+            "ai-rephrase",
+            "ai-summarize",
+            "ai-simplify",
+            "ai-tone",
+            "ai-emoji",
+            "ai-tldr",
+            "ai-spelling",
+            "ai-translate",
+            "bold",
+            "color",
+            "italic",
+            "link",
+            "strike",
+            "subscript",
+            "superscript",
+            "underline",
+            "undo",
+            "redo"
+          ],
+          "allow_target_blank": true,
+          "allow_custom_attributes": true
+        },
+        "logos": {
+          "type": "multiasset",
+          "pos": 3,
+          "required": false,
+          "filetypes": [
+            "images"
+          ],
+          "asset_folder_id": 633441
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "splitLogos",
+      "component_group_uuid": "640ba274-f18b-49cf-a57d-709e2dcccfb4",
+      "color": "#ffac00",
+      "icon": "block-text-img-c",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "🧱 Page Blocks"
+    },
+    {
+      "name": "teaser",
+      "display_name": null,
+      "created_at": "2024-08-30T08:45:34.276Z",
+      "updated_at": "2024-08-30T08:45:34.276Z",
+      "id": 6231729,
+      "schema": {
+        "headline": {
+          "type": "text"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "teaser",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "video",
+      "display_name": null,
+      "created_at": "2024-09-02T08:48:01.595Z",
+      "updated_at": "2024-09-02T08:55:29.866Z",
+      "id": 6239728,
+      "schema": {
+        "internalName": {
+          "type": "text",
+          "pos": 0,
+          "required": true
+        },
+        "source": {
+          "type": "asset",
+          "pos": 2,
+          "filetypes": [
+            "videos"
+          ],
+          "asset_folder_id": 633429,
+          "allow_external_url": true,
+          "translatable": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "video",
+      "component_group_uuid": "66b1761f-95b7-4c9a-a795-f821df54828c",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "⚛️ Content Items"
+    }
+  ]
+}

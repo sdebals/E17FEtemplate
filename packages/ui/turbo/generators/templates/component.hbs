@@ -1,0 +1,22 @@
+{{#if isClient}}
+"use client";
+{{/if}}
+
+import clsx from "clsx";
+import { tv } from "tailwind-variants";
+
+export interface I{{pascalCase name}}Props {
+  id: string;
+  className?: string;
+}
+
+const tv{{pascalCase name}} = tv({ slots: { container: "w-full" }});
+
+export{{#unless isClient}} async{{/unless}} function {{pascalCase name}}({ id, className }: I{{pascalCase name}}Props) {
+  const classes = tv{{pascalCase name}}();
+  return (
+    <div className='{clsx(classes.container(),' className)}>
+      <h1>{{pascalCase name}} Component - {id}</h1>
+    </div>
+  );
+};

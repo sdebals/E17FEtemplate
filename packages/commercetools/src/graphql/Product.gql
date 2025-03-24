@@ -1,0 +1,11 @@
+query ProductSearch($text: String!, $locale: Locale!) {
+  productProjectionSearch(text: $text, locale: $locale) {
+    results {
+      name(locale: $locale)
+      description(locale: $locale)
+      masterVariant {
+        sku
+      }
+    }
+  }
+}

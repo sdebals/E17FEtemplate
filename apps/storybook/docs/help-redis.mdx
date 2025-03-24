@@ -1,0 +1,49 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Help/Redis" />
+
+# Using Redis
+
+Redis is a source-available, in-memory storage, used as a distributed, in-memory key-value database, cache and message broker, with optional durability.
+
+It can improve the performance of Next.js by moving from standard filesystem cache to memory.
+
+## Setup in the project
+
+Redis is exposed using the internal `@repo/redis` package that sits inside `packages/redis`.
+
+Next.js will load the Redis cache handler if the `REDIS_HOST` environment variable is present:
+
+```sh
+REDIS_HOST="localhost"
+REDIS_PORT="6379"
+```
+
+It's expected that a Redis instance is available, it can be setup locally using `redis-stack-server`,
+and it's also recommended to use the app `Redis Insight` to monitor and see what is being cached.
+Next.js also provides an extra debug option that can be enabled via environment variable:
+
+```sh
+NEXT_PRIVATE_DEBUG_CACHE="1"
+```
+
+## Features
+
+- Cache handler integration will automatically make Next.js to use Redis as cache storage without any further actions
+- The Cache handler only works in production mode, so it's necessary to build and start next.js
+- Exposes a Redis client that can be imported from the repo. Example:
+```ts
+import { getRedisClient } from "@repo/redis";
+
+const redis = getRedisClient();
+redis.set("prefix:key", "value");
+// ...
+const value = redis.get("prefix:key");
+```
+Bear in mind that we still should rely on next.js for caching, and the redis client should be used for very specific cases.
+
+## References
+
+- [https://caching-tools.github.io/next-shared-cache/redis](https://caching-tools.github.io/next-shared-cache/redis)
+- [https://redis.io/docs/latest/operate/oss_and_stack/install/install-stack/](https://redis.io/docs/latest/operate/oss_and_stack/install/install-stack/)
+- [https://redis.io/docs/latest/develop/connect/insight/](https://redis.io/docs/latest/operate/oss_and_stack/install/install-stack/)

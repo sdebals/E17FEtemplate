@@ -1,0 +1,56 @@
+@import 'tailwindcss';
+
+@config './tailwind.config.ts';
+
+/* Global overrides */
+p > a {
+  @apply hover:no-underline!;
+}
+/* ----------------------------------------------------------------------------- */
+
+/* Info messages classes that can be used inside rich-text editor */
+.ui-error {
+  @apply flex w-full items-center rounded-md bg-red-600 px-2 py-2 font-semibold text-white;
+}
+
+.ui-error:before {
+  @apply mr-2 h-8 w-8 text-4xl font-semibold text-white content-[url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZT0iI2ZmZmZmZiIgY2xhc3M9InNpemUtNiI+CiAgPHBhdGggc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJtOS43NSA5Ljc1IDQuNSA0LjVtMC00LjUtNC41IDQuNU0yMSAxMmE5IDkgMCAxIDEtMTggMCA5IDkgMCAwIDEgMTggMFoiIC8+Cjwvc3ZnPgo=")];
+}
+
+.ui-warning {
+  @apply flex w-full items-center rounded-md bg-orange-700 px-2 py-2 font-semibold text-white;
+}
+
+.ui-warning:before {
+  @apply mr-2 h-8 w-8 text-4xl font-semibold text-white content-[url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZT0iI2ZmZmZmZiIgY2xhc3M9InNpemUtNiI+CiAgPHBhdGggc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNMTIgOXYzLjc1bS05LjMwMyAzLjM3NmMtLjg2NiAxLjUuMjE3IDMuMzc0IDEuOTQ4IDMuMzc0aDE0LjcxYzEuNzMgMCAyLjgxMy0xLjg3NCAxLjk0OC0zLjM3NEwxMy45NDkgMy4zNzhjLS44NjYtMS41LTMuMDMyLTEuNS0zLjg5OCAwTDIuNjk3IDE2LjEyNlpNMTIgMTUuNzVoLjAwN3YuMDA4SDEydi0uMDA4WiIgLz4KPC9zdmc+Cg==")];
+}
+
+.ui-info {
+  @apply flex w-full items-center rounded-md bg-blue-600 px-2 py-2 font-semibold text-white;
+}
+
+.ui-info:before {
+  @apply mr-2 h-8 w-8 text-4xl font-semibold text-white content-[url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZT0iI2ZmZmZmZiIgY2xhc3M9InNpemUtNiI+CiAgPHBhdGggc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJtMTEuMjUgMTEuMjUuMDQxLS4wMmEuNzUuNzUgMCAwIDEgMS4wNjMuODUybC0uNzA4IDIuODM2YS43NS43NSAwIDAgMCAxLjA2My44NTNsLjA0MS0uMDIxTTIxIDEyYTkgOSAwIDEgMS0xOCAwIDkgOSAwIDAgMSAxOCAwWm0tOS0zLjc1aC4wMDh2LjAwOEgxMlY4LjI1WiIgLz4KPC9zdmc+Cg==")];
+}
+/* ----------------------------------------------------------------------------- */
+
+/* images and captions */
+.ui-image {
+  @apply mb-1;
+}
+
+.ui-caption {
+  @apply mb-3 block py-1 text-sm;
+}
+/* ----------------------------------------------------------------------------- */
+
+/* rich-text - some overrides due prose class being overriden in config */
+.rich-text {
+  @apply px-4;
+}
+
+.rich-text > div {
+  @apply px-4;
+}
+
+/* ----------------------------------------------------------------------------- */
