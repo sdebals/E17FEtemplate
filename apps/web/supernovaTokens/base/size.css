@@ -3,7 +3,7 @@
  * To modify the format or content of this file, please contact your design system team. 
  */
 
-:root {
+@theme {
   --size-viewport-width: 1728px;
   --size-viewport-height: 942px;
   --size-size-size-0: var(--dimension-sizes-0);

@@ -3,7 +3,7 @@
  * To modify the format or content of this file, please contact your design system team. 
  */
 
-:root {
+@theme {
   --space-gap-gap-0: var(--dimension-sizes-0);
   --space-gap-gap-1: var(--dimension-sizes-1);
   --space-gap-gap-2: var(--dimension-sizes-2);
