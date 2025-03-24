@@ -123,7 +123,7 @@
   --color-text-states-visited: var(--color-primary-800);
   --color-text-states-disabled: var(--color-colors-neutrals-200);
   --color-text-states-invalid: var(--color-colors-functionals-invalid-800);
-  --color-text-headings: var(--color-colors-neutrals-1000);
+  --color-text-headings: var(--color-colors-functionals-valid-600);
   --color-text-body: var(--color-colors-neutrals-800);
   --color-text-buttons-primary: var(--color-colors-neutrals-00);
   --color-text-buttons-secondary: var(--color-primary-default);
