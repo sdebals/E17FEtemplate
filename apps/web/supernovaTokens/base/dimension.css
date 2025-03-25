@@ -47,4 +47,9 @@
   --dimension-font-line-height-dense-xl: 27px;
   --dimension-font-line-height-dense-2-xl: 48px;
   --dimension-font-line-height-dense-3-xl: 77px;
+  --dimension-radius-radius-sm: var(--dimension-sizes-1);
+  --dimension-radius-radius-md: var(--dimension-sizes-2);
+  --dimension-gap-gap-m: var(--dimension-sizes-4);
+  --dimension-size-size-m: var(--dimension-sizes-4);
+  --dimension-size-size-lg: var(--dimension-sizes-6);
 }
