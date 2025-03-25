@@ -296,6 +296,8 @@
   --color-colors-brand02-primary-700: #2c9f73;
   --color-colors-brand02-primary-800: #7eff96;
   --color-colors-brand02-primary-900: #32fb5e;
+  --color-color-red-100: #ffffff;
+  --color-color-red-200: #ffffff;
   --color-text-states-link: var(--color-colors-primary-700);
   --color-text-states-link-hover: var(--color-colors-primary-500);
   --color-text-states-visited: var(--color-colors-primary-800);
